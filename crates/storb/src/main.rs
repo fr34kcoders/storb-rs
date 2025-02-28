@@ -7,6 +7,7 @@ mod cli;
 mod config;
 mod constants;
 mod log;
+mod metrics;
 
 pub fn main() {
     // CLI values take precedence over settings.toml
@@ -47,6 +48,8 @@ pub fn main() {
         Some(level) => level,
         None => &settings.log_level,
     };
+
+    metrics::setup_metrics();
 
     let _guards = log::new(log_level.as_str());
     info!("Initialised logger with log level {log_level}");
