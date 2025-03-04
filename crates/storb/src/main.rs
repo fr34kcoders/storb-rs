@@ -54,6 +54,7 @@ pub fn main() {
     match matches.subcommand() {
         Some(("miner", cmd)) => cli::miner::exec(cmd, &settings),
         Some(("validator", cmd)) => cli::validator::exec(cmd, &settings),
+        Some(("util", cmd)) => cli::util::exec(cmd),
         _ => unreachable!(),
     }
 }

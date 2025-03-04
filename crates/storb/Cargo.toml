@@ -18,10 +18,12 @@ storb_miner.workspace = true
 storb_validator.workspace = true
 
 # Third party
+anyhow.workspace = true
 clap.workspace = true
 config.workspace = true
 crabtensor.workspace = true
 rcgen.workspace = true
+rusqlite.workspace = true
 serde.workspace = true
 tokio.workspace = true
 tokio-serde.workspace = true

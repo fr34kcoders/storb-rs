@@ -23,7 +23,7 @@ SELECT value FROM numbers;
 
 -- Table for miner chunk values --
 CREATE TABLE chunks (
-    chunk_hash BLOB PRIMARY KEY, -- chunk hash (RecordKey)
+    chunk_hash BLOB NOT NULL PRIMARY KEY, -- chunk hash (RecordKey)
     validator_id INTEGER,
     piece_hashes BLOB, -- serialized Rust vector (Vec<[u8; 32]>)
     chunk_idx INTEGER,
@@ -34,3 +34,5 @@ CREATE TABLE chunks (
     original_chunk_size INTEGER,
     signature BLOB -- KeypairSignature
 );
+
+SELECT crsql_as_crr('chunks');
